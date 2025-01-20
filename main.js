@@ -1,4 +1,8 @@
 import "./style.css"
 import { test } from "./src/draw/test.js"
 
-test()
+const startButton = document.getElementById("start")
+startButton.addEventListener("click", (e) => {
+  startButton.remove()
+  test()
+})

@@ -15,6 +15,7 @@
   "author": "Jacob",
   "license": "ISC",
   "dependencies": {
+    "howler": "^2.2.4",
     "pixi.js": "^8.6.6"
   },
   "devDependencies": {
