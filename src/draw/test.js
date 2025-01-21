@@ -105,6 +105,7 @@ const drawMenuItems = async (app, menuItems) => {
       redraw(menuItems)
       optionsChosenCount++
 
+      console.log(optionsChosenCount)
       if (optionsChosenCount === menuItems.length) {
         soundPlayed.on("end", () => {
           playEnd(() => {
@@ -139,7 +140,8 @@ const drawIntro = (app) => {
 }
 
 const startGame = (app) => {
-  const { dontknow, cantdothat, bringbring, noanswer, cry } = sounds()
+  const { dontknow, cantdothat, bringbring, noanswer, cry, nullpointers } =
+    sounds()
   const options = [
     {
       text: "Learn Java",
@@ -178,7 +180,10 @@ const startGame = (app) => {
     },
     {
       text: "Read the logs",
-      callback: () => {},
+      callback: () => {
+        nullpointers.play()
+        return nullpointers
+      },
       shown: true,
     },
   ]

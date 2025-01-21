@@ -36,14 +36,18 @@ export const sounds = () => {
   const cantdothat = loadSound("cantdothatrightnow.m4a")
   const bringbring = loadSound("bringbring.m4a")
   const cry = loadSound("cry.m4a")
+  const nullpointers = loadSound("nullpointer.m4a")
   const noanswer = loadSound("noanswer.m4a")
-  return { dontknow, cantdothat, bringbring, cry, noanswer }
+
+  return { dontknow, cantdothat, bringbring, cry, noanswer, nullpointers }
 }
 
 export const playEnd = (callback) => {
   const bringbring = loadSound("bringbring.m4a")
   const resolved = loadSound("resolved.m4a")
+  bringbring.play()
   bringbring.on("end", () => {
+    resolved.play()
     resolved.on("end", () => {
       callback()
     })
