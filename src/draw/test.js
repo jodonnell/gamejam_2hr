@@ -8,13 +8,11 @@ import {
   Sprite,
   Rectangle,
 } from "pixi.js"
-import atlasData from "../../assets/spritesheets/pieces-spritesheet.json"
 
 const load = async () => {
   return Promise.all([
-    Assets.load("../../assets/bloodyterror.ttf"),
-    Assets.load("../../assets/fonts/OpenSans-Medium.ttf"),
-    Assets.load("../../assets/spritesheets/pieces-spritesheet.png"),
+    Assets.load("./assets/bloodyterror.ttf"),
+    Assets.load("./assets/fonts/OpenSans-Medium.ttf"),
   ])
 }
 

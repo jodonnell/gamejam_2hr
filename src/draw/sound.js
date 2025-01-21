@@ -2,7 +2,7 @@ import { Howl } from "howler"
 
 function loadSound(sound) {
   return new Howl({
-    src: [`assets/${sound}`],
+    src: [`./assets/${sound}`],
     onloaderror: function () {
       console.log("error loading sound" + sound)
     },
