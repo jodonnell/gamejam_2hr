@@ -8,17 +8,15 @@ import {
   Sprite,
   Rectangle,
 } from "pixi.js"
-import atlasData from "../../assets/spritesheets/pieces-spritesheet.json"
 
 const load = async () => {
   return Promise.all([
     Assets.load("../../assets/bloodyterror.ttf"),
     Assets.load("../../assets/fonts/OpenSans-Medium.ttf"),
-    Assets.load("../../assets/spritesheets/pieces-spritesheet.png"),
   ])
 }
 
-const drawText = async (app) => {
+const drawTime = async (app) => {
   const text = new Text({
     text: "2:17am",
     style: {
@@ -198,17 +196,13 @@ export const test = async () => {
 
   await load()
 
-  //startGame(app)
-  drawText(app)
+  drawTime(app)
   let introText
-  startIntro(
+  await startIntro(
     () => {
       introText = drawIntro(app)
-    },
-    () => {
-      introText.destroy(true)
-
-      startGame(app)
-    },
+    }
   )
+  introText.destroy(true)
+  startGame(app)
 }
